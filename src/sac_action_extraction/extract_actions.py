@@ -1,3 +1,5 @@
+"""Script to extract actions from a response string using predefined models."""
+
 from pathlib import Path
 from paragraph2actions.default_converters import default_action_converters
 from paragraph2actions.paragraph_translator import ParagraphTranslator
@@ -38,9 +40,3 @@ def extract_actions_from_string(response: str, models: List[Path] = [Path("/data
         }
     except Exception as e:
         return {"error": str(e)}
-
-# Example usage of the function
-# models = [Path("/path/to/model1"), Path("/path/to/model2")]
-# sentencepiece_model = Path("/path/to/sp_model.model")
-# response = "Enter your text here"
-# actions = extract_actions(response, models, sentencepiece_model)
